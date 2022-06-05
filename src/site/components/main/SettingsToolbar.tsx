@@ -13,6 +13,7 @@ const ToolbarContainer = styled.div`
   backdrop-filter: blur(5px);
   background-color: ${(p) => p.theme.LayerBackground};
   pointer-events: all;
+  z-index: 2;
 
   @media (orientation: landscape) {
     flex-direction: column;

@@ -124,6 +124,8 @@ export const Camera: React.FC<Props> = ({ setTheme }) => {
   return (
     <MainContainer ref={mainRef}>
       <PlayerWrapper>
+        <div className="hl-line-of-intersection"></div>
+        <div className="vl-line-of-intersection"></div>
         <Player loading={loading} />
       </PlayerWrapper>
 

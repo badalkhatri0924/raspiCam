@@ -34,4 +34,18 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 0px;
     border: 0;
   }
+
+  .vl-line-of-intersection {
+      border-left: 2px solid red;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+  }
+  .hl-line-of-intersection {
+    border: 1px solid red;
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    z-index: 1;
+  }
 `;
