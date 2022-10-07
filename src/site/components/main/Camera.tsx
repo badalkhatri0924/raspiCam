@@ -80,6 +80,7 @@ export type ActiveSetting =
   | 'Effect'
   | 'Shutter'
   | 'AwbAuto'
+  | 'GridLine'
   | undefined;
 
 const useFetchSettings = <T extends { [k in keyof T]: TypeSetting }>(
@@ -118,14 +119,36 @@ export const Camera: React.FC<Props> = ({ setTheme }) => {
   const [camera, updateCamera] = useFetchSettings('/api/camera', cameraSettingDesc, setLoading);
   const [stream, updateStream] = useFetchSettings('/api/stream', streamSettingDesc, setLoading);
 
+  const [horizontalLine, setHorizontalLine] = React.useState(50);
+  const [verticalLine, setVerticalLine] = React.useState(50);
+
   const activateSetting = (setting: ActiveSetting) =>
     setActiveSetting((currentSetting) => (currentSetting === setting ? undefined : setting));
 
   return (
     <MainContainer ref={mainRef}>
       <PlayerWrapper>
-        <div className="hl-line-of-intersection"></div>
-        <div className="vl-line-of-intersection"></div>
+        {/* hl-line-of-intersection */}
+        <div
+          style={{
+            border: '1px solid red',
+            width: '100%',
+            top: `${horizontalLine}%`,
+            position: 'absolute',
+            zIndex: 1,
+          }}
+        ></div>
+        {/* vl-line-of-intersection */}
+        <div
+          style={{
+            borderLeft: '2px solid red',
+            height: '100%',
+            position: 'absolute',
+            zIndex: 1,
+            left: `${verticalLine}%`,
+          }}
+        ></div>
+
         <Player loading={loading} />
       </PlayerWrapper>
 
@@ -172,6 +195,10 @@ export const Camera: React.FC<Props> = ({ setTheme }) => {
               activateSetting={activateSetting}
               updateCamera={updateCamera}
               updatePhoto={updatePhoto}
+              setHorizontalLine={setHorizontalLine}
+              setVerticalLine={setVerticalLine}
+              horizontalLine={horizontalLine}
+              verticalLine={verticalLine}
             />
           </OverlayContent>
         )}

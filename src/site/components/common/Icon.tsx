@@ -135,6 +135,22 @@ export const IconMap = {
       <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
     </svg>
   ),
+  GridLine: (
+    <svg
+      width="700pt"
+      height="700pt"
+      version="1.1"
+      viewBox="0 0 700 700"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g>
+        <path d="m140 70h192.5v192.5h-192.5z" />
+        <path d="m140 297.5h192.5v192.5h-192.5z" />
+        <path d="m367.5 70h192.5v192.5h-192.5z" />
+        <path d="m367.5 297.5h192.5v192.5h-192.5z" />
+      </g>
+    </svg>
+  ),
 };
 
 export type IconType = keyof typeof IconMap;

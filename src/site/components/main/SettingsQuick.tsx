@@ -46,6 +46,10 @@ export interface QuickSettingsProps {
   activateSetting: (setting: ActiveSetting) => void;
   updateCamera: (data: CameraSetting) => void;
   updatePhoto: (data: PhotoSetting) => void;
+  setHorizontalLine: any;
+  setVerticalLine: any;
+  horizontalLine: number;
+  verticalLine: number;
 }
 
 export const SettingsQuick: React.FC<QuickSettingsProps> = ({
@@ -55,6 +59,10 @@ export const SettingsQuick: React.FC<QuickSettingsProps> = ({
   activateSetting,
   updateCamera,
   updatePhoto,
+  setHorizontalLine,
+  setVerticalLine,
+  horizontalLine,
+  verticalLine,
 }) => (
   <QuickSettingsPane>
     <QuickSettingsContainer>
@@ -63,6 +71,34 @@ export const SettingsQuick: React.FC<QuickSettingsProps> = ({
       {activeSetting === 'AwbAuto' && <AwbSetting data={camera} updateData={updateCamera} />}
       {activeSetting === 'Effect' && <EffectSetting data={camera} updateData={updateCamera} />}
       {activeSetting === 'Timelapse' && <TimelapseSetting data={photo} updateData={updatePhoto} />}
+
+      <label style={{ color: 'white' }}>
+        Horizontal Line:
+        <input
+          type="number"
+          onChange={({ target }) => {
+            setHorizontalLine(target.value);
+          }}
+          defaultValue={50}
+          value={horizontalLine}
+          // style={{ borderRadius: 10, background: 'snow', padding: 10, border: 'none', margin: 10 }}
+          className="grid-setting-input"
+        />
+      </label>
+
+      <label style={{ color: 'white' }}>
+        Vertical Line:
+        <input
+          type="number"
+          onChange={({ target }) => {
+            setVerticalLine(target.value);
+          }}
+          defaultValue={50}
+          value={verticalLine}
+          // style={{ borderRadius: 10, background: 'snow', padding: 10, border: 'none', margin: 10 }}
+          className="grid-setting-input"
+        />
+      </label>
     </QuickSettingsContainer>
 
     <Filler enableClick={true} onClick={() => activateSetting(undefined)} />

@@ -62,5 +62,6 @@ export const SettingsToolbar: React.FC<ToolbarProps> = ({ status, active, activa
         <ToolbarButton icon="Timelapse" setting="Timelapse" active={active} activate={activate} />
       </React.Fragment>
     )}
+    <ToolbarButton icon="GridLine" setting="GridLine" active={active} activate={activate} />
   </ToolbarContainer>
 );

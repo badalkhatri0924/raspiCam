@@ -48,4 +48,12 @@ export const GlobalStyle = createGlobalStyle`
     position: absolute;
     z-index: 1;
   }
+
+  .grid-setting-input {
+    border-radius: 10px; 
+    background: snow; 
+    padding: 10px; 
+    border: none; 
+    margin: 10px
+  }
 `;
