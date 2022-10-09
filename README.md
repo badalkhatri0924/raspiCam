@@ -238,3 +238,5 @@ You can find the latest command sent to raspiCam in the terminal output:
 
 ## Keywords
 jmuxer web application raspberry hq camera software react live player node.js raspberry pi stream h264 monitoring timelapse video recording capture raspivid raspistill raspicam
+
+https://baldbeardedbuilder.com/blog/setting-up-raspberry-pi-for-use-in-kiosk-mode-with-chromium/
